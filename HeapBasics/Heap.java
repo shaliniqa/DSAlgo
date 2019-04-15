@@ -36,6 +36,7 @@ public class Heap {
 		swap(0,this.data.size()-1);
 		//remove the last element
 		int r=this.data.get(this.data.size()-1);
+		this.data.remove(this.data.size()-1);
 		
 		downheapify(0);
 		return r;
@@ -43,7 +44,7 @@ public class Heap {
 	private void downheapify(int pi)
 	{
 		int lci=2*pi+1;
-		int rci=2*pi+1;
+		int rci=2*pi+2;
 		int mini=pi;
 		
 		if(lci<this.data.size() && data.get(lci)<data.get(mini))
@@ -63,6 +64,11 @@ public class Heap {
 	public int extractMin()
 	{
 		return this.data.get(0);
+	}
+	
+	public void display()
+	{
+		System.out.println(this.data);
 	}
 	
 }
